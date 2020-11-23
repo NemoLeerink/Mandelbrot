@@ -10,8 +10,8 @@ namespace Mandelbrot
     {
         static void Main()
         {
-            int getal = Mandel(100, 0.5, 0.8);
-            Console.WriteLine("De teller is geïndigd op: " + getal);
+            //int getal = Mandel(100, -0.5, -0.8);
+            //Console.WriteLine("De teller is geïndigd op: " + getal);
             Application.Run(new Form1());
         }
         public static int Mandel(int herhalingen, double x, double y)

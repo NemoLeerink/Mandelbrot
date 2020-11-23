@@ -134,24 +134,31 @@ namespace Mandelbrot
             Brush brushWit = new SolidBrush(Color.White);
 
             int mandelGetal;
+            double xWaarde;
+            double yWaarde;
 
-            for (int x = 0; x < 400; x++)
+            for (double x = 0; x < 400; x++)
             {
-                for (int y = 0; y < 400; y++) 
+                for (double y = 0; y < 400; y++)
                 {
-                    mandelGetal = Program.Mandel(100, (x-200)/100, (y-200)/100);
-                    Console.WriteLine(mandelGetal);
+                    xWaarde = (x - 200) / 100;
+                    yWaarde = (y - 200) / 100;
+
+                    //Console.WriteLine(xWaarde + " en y waarde " + yWaarde);
+
+                    mandelGetal = Program.Mandel(100, xWaarde, yWaarde);
+                    //Console.WriteLine(mandelGetal);
                     // if mandelgetal even wordt het wit. Als oneven zwart. Oneindig ook zwart.
                     if ((mandelGetal % 2 == 0) & mandelGetal != 100)
                     {
-                        g.FillRectangle(brushWit, x, y, 1, 1);
+                        g.FillRectangle(brushWit, (int)x, (int)y, 1, 1);
                     }
-                    else 
+                    else
                     {
-                        g.FillRectangle(brushZwart, x, y, 1, 1);
+                        g.FillRectangle(brushZwart, (int)x, (int)y, 1, 1);
                     }
                 }
-                
+
             }
 
 

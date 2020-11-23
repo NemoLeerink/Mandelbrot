@@ -127,6 +127,33 @@ namespace Mandelbrot
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+            var p = sender as Panel;
+            var g = e.Graphics;
+
+            Brush brushZwart = new SolidBrush(Color.Black);
+            Brush brushWit = new SolidBrush(Color.White);
+
+            int mandelGetal;
+
+            for (int x = 0; x < 400; x++)
+            {
+                for (int y = 0; y < 400; y++) 
+                {
+                    mandelGetal = Program.Mandel(100, (x-200)/100, (y-200)/100);
+                    Console.WriteLine(mandelGetal);
+                    // if mandelgetal even wordt het wit. Als oneven zwart. Oneindig ook zwart.
+                    if ((mandelGetal % 2 == 0) & mandelGetal != 100)
+                    {
+                        g.FillRectangle(brushWit, x, y, 1, 1);
+                    }
+                    else 
+                    {
+                        g.FillRectangle(brushZwart, x, y, 1, 1);
+                    }
+                }
+                
+            }
+
 
         }
     }

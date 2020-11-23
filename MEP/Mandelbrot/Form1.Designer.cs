@@ -34,7 +34,7 @@ namespace Mandelbrot
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Location = new System.Drawing.Point(0, 75);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";

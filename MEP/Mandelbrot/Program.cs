@@ -10,17 +10,17 @@ namespace Mandelbrot
     {
         static void Main()
         {
-            int getal = Mandel(100, 0.5, 0.8, 0, 0);
+            int getal = Mandel(100, 0.5, 0.8);
             Console.WriteLine("De teller is geïndigd op: " + getal);
             Application.Run(new Form1());
         }
-        static int Mandel(int herhalingen, double x, double y, double a, double b)
+        public static int Mandel(int herhalingen, double x, double y)
         {
             double pyt = 0;
             double manx = x;
             double many = y;
-            double mana = a;
-            double manb = b;
+            double mana = 0;
+            double manb = 0;
             int counter = 0;
             do
             {

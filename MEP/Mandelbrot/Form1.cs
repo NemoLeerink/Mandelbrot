@@ -87,24 +87,27 @@ namespace Mandelbrot
             this.Controls.Add(fieldMax);
             MaakOkKnop();
 
-            this.CreateMyPanel();
+            InitializeComponent();
+
+            // this.CreateMyPanel();
+
         }
 
-        public void CreateMyPanel()
-        {
-            Panel panel1 = new Panel();
-            TextBox textBox1 = new TextBox();
-            Label label1 = new Label();
-
-            // Initialize the Panel control.
-            panel1.Location = new Point(0, 75);
-            panel1.Size = new Size(400, 400);
-            // Set the Borderstyle for the Panel to three-dimensional.
-            panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            // Add the Panel control to the form.
-            this.Controls.Add(panel1);
-            
-        }
+     //  public void CreateMyPanel()
+     //  {
+     //      Panel panel1 = new Panel();
+     //      TextBox textBox1 = new TextBox();
+     //      Label label1 = new Label();
+     //
+     //      // Initialize the Panel control.
+     //      panel1.Location = new Point(0, 75);
+     //      panel1.Size = new Size(400, 400);
+     //      // Set the Borderstyle for the Panel to three-dimensional.
+     //      panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+     //      // Add the Panel control to the form.
+     //      
+     //      this.Controls.Add(panel1);
+     //  }
         private void MaakOkKnop()
         {
             Button buttonOk = new Button()
@@ -115,6 +118,16 @@ namespace Mandelbrot
             };
             buttonOk.DialogResult = DialogResult.OK;
             Controls.Add(buttonOk);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

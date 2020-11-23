@@ -31,12 +31,12 @@ namespace Mandelbrot
                 double newmanb = test1.Item2;
                 //Console.WriteLine("Mandel x is: " + newmana);
                 //Console.WriteLine("Mandel y is: " + newmanb);
-                pyt = newmana * newmana + newmanb * newmanb;
+                pyt = Math.Sqrt(newmana * newmana + newmanb * newmanb);
                 //Console.Write("Afstand is: " + pyt);
                 mana = newmana;
                 manb = newmanb;
 
-            } while (pyt < 4 & counter < herhalingen);
+            } while (pyt <= 2 & counter < herhalingen);
 
             //Console.WriteLine("\nDone!");
             //Console.WriteLine("Afstand is: " + pyt);

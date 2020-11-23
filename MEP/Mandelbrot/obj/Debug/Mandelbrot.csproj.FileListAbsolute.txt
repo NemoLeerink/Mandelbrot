@@ -25,3 +25,13 @@ C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbr
 C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.csproj.CoreCompileInputs.cache
 C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.exe
 C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.pdb
+C:\Users\Lenovo Thinkpad\Desktop\Mandelbrot\MEP\Mandelbrot\bin\Debug\Mandelbrot.exe.config
+C:\Users\Lenovo Thinkpad\Desktop\Mandelbrot\MEP\Mandelbrot\bin\Debug\Mandelbrot.exe
+C:\Users\Lenovo Thinkpad\Desktop\Mandelbrot\MEP\Mandelbrot\bin\Debug\Mandelbrot.pdb
+C:\Users\Lenovo Thinkpad\Desktop\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.csprojAssemblyReference.cache
+C:\Users\Lenovo Thinkpad\Desktop\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.Properties.Resources.resources
+C:\Users\Lenovo Thinkpad\Desktop\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.csproj.GenerateResource.cache
+C:\Users\Lenovo Thinkpad\Desktop\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo Thinkpad\Desktop\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.exe
+C:\Users\Lenovo Thinkpad\Desktop\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.pdb
+C:\Users\Lenovo Thinkpad\Desktop\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.Form1.resources

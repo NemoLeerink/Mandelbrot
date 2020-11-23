@@ -16,3 +16,12 @@ C:\Users\Nemo\Desktop\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.csproj.Gene
 C:\Users\Nemo\Desktop\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.csproj.CoreCompileInputs.cache
 C:\Users\Nemo\Desktop\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.exe
 C:\Users\Nemo\Desktop\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.pdb
+C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\bin\Debug\Mandelbrot.exe.config
+C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\bin\Debug\Mandelbrot.exe
+C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\bin\Debug\Mandelbrot.pdb
+C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.csprojAssemblyReference.cache
+C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.Properties.Resources.resources
+C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.csproj.GenerateResource.cache
+C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.csproj.CoreCompileInputs.cache
+C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.exe
+C:\Users\Gebruiker\Documents\GitHub\Mandelbrot\MEP\Mandelbrot\obj\Debug\Mandelbrot.pdb

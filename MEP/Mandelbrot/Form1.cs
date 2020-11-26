@@ -12,8 +12,10 @@ namespace Mandelbrot
 {
     public partial class Form1 : Form
     {
-        int schaal = 100;
+        double schaal = 0.01;
         int herhalingen = 100;
+        double middenX;
+        double middenY;
 
         public Form1()
         {
@@ -27,8 +29,8 @@ namespace Mandelbrot
 
         public void panel1_Paint(object sender, PaintEventArgs e)
         {
-            var p = sender as Panel;
-            var g = e.Graphics;
+            Panel p = sender as Panel;
+            Graphics g = e.Graphics;
 
             Brush brushZwart = new SolidBrush(Color.Black);
             Brush brushWit = new SolidBrush(Color.White);
@@ -37,12 +39,18 @@ namespace Mandelbrot
             double xWaarde;
             double yWaarde;
 
+            middenX = panel1.Width / 2;
+            middenY = panel1.Height / 2;
+
             for (int x = 0; x < panel1.Width; x++)
             {
                 for (int y = 0; y < panel1.Height; y++)
                 {
-                    xWaarde = ((double)x - (panel1.Width / 2)) / schaal;
-                    yWaarde = ((double)y - (panel1.Height / 2)) / schaal;
+                   // xWaarde = ((double)x - (panel1.Width-gebruiker / 2)) * schaal; ? 
+                    //yWaarde = ((double)y - (panel1.Height-gebruiker / 2)) * schaal; ?
+                    
+                    xWaarde = ((double)x - middenX) * schaal;
+                    yWaarde = ((double)y - middenY) * schaal;
 
                     mandelGetal = Mandelbrot.Mandel(herhalingen, xWaarde, yWaarde);
                     
@@ -63,14 +71,20 @@ namespace Mandelbrot
         {
             try
             {
+                //double test = double.Parse(textBoxX.Text);
+               // middenX -= 100*test;
+               // Console.WriteLine(middenX);
+
+                
                 herhalingen = int.Parse(textBoxMax.Text);
-                this.panel1.Refresh();
+                schaal = double.Parse(textBoxSchaal.Text);
             }
             catch (Exception ex) 
             {
                 // Iets responsiefs voor de gebruiker toevoegen?
-                herhalingen = 0;
             }
+
+            this.panel1.Refresh();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -81,6 +95,35 @@ namespace Mandelbrot
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                try
+                {
+                    schaal = schaal * 2;
+
+                }
+                catch (Exception ex)
+                {
+                    // Iets responsiefs voor de gebruiker toevoegen?
+                }
+            }
+            else if (e.Button == MouseButtons.Left) 
+            {
+                try
+                {
+                    schaal = schaal / 2;
+
+                }
+                catch (Exception ex)
+                {
+                    // Iets responsiefs voor de gebruiker toevoegen?
+                }
+            }
+             this.panel1.Refresh();
         }
     }
 }

@@ -14,8 +14,8 @@ namespace Mandelbrot
     {
         double schaal = 0.01;
         int herhalingen = 100;
-        double middenX;
-        double middenY;
+        double middenX = 0;
+        double middenY = 0;
 
         public Form1()
         {
@@ -39,18 +39,16 @@ namespace Mandelbrot
             double xWaarde;
             double yWaarde;
 
-            middenX = panel1.Width / 2;
-            middenY = panel1.Height / 2;
+            double defaultMiddenX = panel1.Width / 2; // 200
+            double defaultMiddenY = panel1.Height / 2; // 200
 
             for (int x = 0; x < panel1.Width; x++)
             {
                 for (int y = 0; y < panel1.Height; y++)
                 {
-                   // xWaarde = ((double)x - (panel1.Width-gebruiker / 2)) * schaal; ? 
-                    //yWaarde = ((double)y - (panel1.Height-gebruiker / 2)) * schaal; ?
-                    
-                    xWaarde = ((double)x - middenX) * schaal;
-                    yWaarde = ((double)y - middenY) * schaal;
+           
+                    xWaarde = (((double)x - defaultMiddenX) * schaal) + middenX;
+                    yWaarde = ((double)y - defaultMiddenY) * schaal + middenY;
 
                     mandelGetal = Mandelbrot.Mandel(herhalingen, xWaarde, yWaarde);
                     
@@ -71,11 +69,8 @@ namespace Mandelbrot
         {
             try
             {
-                //double test = double.Parse(textBoxX.Text);
-               // middenX -= 100*test;
-               // Console.WriteLine(middenX);
-
-                
+                middenX = double.Parse(textBoxX.Text);
+                middenY = double.Parse(textBoxY.Text);
                 herhalingen = int.Parse(textBoxMax.Text);
                 schaal = double.Parse(textBoxSchaal.Text);
             }

@@ -25,10 +25,8 @@ namespace Mandelbrot
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        public void panel1_Paint(object sender, PaintEventArgs e)
         {
-            Invalidate();
-
             var p = sender as Panel;
             var g = e.Graphics;
 
@@ -66,7 +64,7 @@ namespace Mandelbrot
             try
             {
                 herhalingen = int.Parse(textBoxMax.Text);
-                this.Invalidate();
+                this.panel1.Refresh();
             }
             catch (Exception ex) 
             {

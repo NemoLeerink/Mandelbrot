@@ -14,7 +14,7 @@ namespace Mandelbrot
     {
         public Form1()
         {
-            int standaardTextBox = 100;
+            /*int standaardTextBox = 100;
             int labelSize = 60;
             
             Label labelX = new Label()
@@ -77,39 +77,6 @@ namespace Mandelbrot
                 Size = new Size(50, 20)
             };
 
-            this.Controls.Add(labelX);
-            this.Controls.Add(fieldX);
-            this.Controls.Add(labelY);
-            this.Controls.Add(fieldY);
-            this.Controls.Add(labelSchaal);
-            this.Controls.Add(fieldSchaal);
-            this.Controls.Add(labelMax);
-            this.Controls.Add(fieldMax);
-            MaakOkKnop();
-
-            InitializeComponent();
-
-            // this.CreateMyPanel();
-
-        }
-
-     //  public void CreateMyPanel()
-     //  {
-     //      Panel panel1 = new Panel();
-     //      TextBox textBox1 = new TextBox();
-     //      Label label1 = new Label();
-     //
-     //      // Initialize the Panel control.
-     //      panel1.Location = new Point(0, 75);
-     //      panel1.Size = new Size(400, 400);
-     //      // Set the Borderstyle for the Panel to three-dimensional.
-     //      panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-     //      // Add the Panel control to the form.
-     //      
-     //      this.Controls.Add(panel1);
-     //  }
-        private void MaakOkKnop()
-        {
             Button buttonOk = new Button()
             {
                 Text = "OK",
@@ -118,8 +85,18 @@ namespace Mandelbrot
             };
             buttonOk.DialogResult = DialogResult.OK;
             Controls.Add(buttonOk);
-        }
 
+            this.Controls.Add(labelX);
+            this.Controls.Add(fieldX);
+            this.Controls.Add(labelY);
+            this.Controls.Add(fieldY);
+            this.Controls.Add(labelSchaal);
+            this.Controls.Add(fieldSchaal);
+            this.Controls.Add(labelMax);
+            this.Controls.Add(fieldMax);*/
+
+            InitializeComponent();
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -134,33 +111,40 @@ namespace Mandelbrot
             Brush brushWit = new SolidBrush(Color.White);
 
             int mandelGetal;
+            int schaal = 100;
+            int herhalingen = 100;
             double xWaarde;
             double yWaarde;
 
-            for (double x = 0; x < 400; x++)
+            for (int x = 0; x < panel1.Width; x++)
             {
-                for (double y = 0; y < 400; y++)
+                for (int y = 0; y < panel1.Height; y++)
                 {
-                    xWaarde = (x - 200) / 100;
-                    yWaarde = (y - 200) / 100;
+                    xWaarde = ((double)x - (panel1.Width / 2)) / schaal;
+                    yWaarde = ((double)y - (panel1.Height / 2)) / schaal;
 
-                    //Console.WriteLine(xWaarde + " en y waarde " + yWaarde);
-
-                    mandelGetal = Program.Mandel(100, xWaarde, yWaarde);
-                    //Console.WriteLine(mandelGetal);
+                    mandelGetal = Mandelbrot.Mandel(herhalingen, xWaarde, yWaarde);
+                    
                     // if mandelgetal even wordt het wit. Als oneven zwart. Oneindig ook zwart.
-                    if ((mandelGetal % 2 == 0) & mandelGetal != 100)
+                    if ((mandelGetal % 2 == 0) & mandelGetal != herhalingen)
                     {
-                        g.FillRectangle(brushWit, (int)x, (int)y, 1, 1);
+                        g.FillRectangle(brushWit, x, y, 1, 1);
                     }
                     else
                     {
-                        g.FillRectangle(brushZwart, (int)x, (int)y, 1, 1);
+                        g.FillRectangle(brushZwart, x, y, 1, 1);
                     }
                 }
-
             }
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }

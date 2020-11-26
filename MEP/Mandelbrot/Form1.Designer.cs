@@ -30,15 +30,16 @@ namespace Mandelbrot
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonOk = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxX = new System.Windows.Forms.TextBox();
+            this.textBoxY = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxSchaal = new System.Windows.Forms.TextBox();
+            this.textBoxMax = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,15 +52,15 @@ namespace Mandelbrot
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button1
+            // buttonOk
             // 
-            this.button1.Location = new System.Drawing.Point(286, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonOk.Location = new System.Drawing.Point(286, 33);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(46, 23);
+            this.buttonOk.TabIndex = 1;
+            this.buttonOk.Text = "OK";
+            this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
             // label1
             // 
@@ -79,19 +80,19 @@ namespace Mandelbrot
             this.label2.TabIndex = 3;
             this.label2.Text = "Midden Y:";
             // 
-            // textBox1
+            // textBoxX
             // 
-            this.textBox1.Location = new System.Drawing.Point(69, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.textBoxX.Location = new System.Drawing.Point(69, 6);
+            this.textBoxX.Name = "textBoxX";
+            this.textBoxX.Size = new System.Drawing.Size(100, 20);
+            this.textBoxX.TabIndex = 4;
             // 
-            // textBox2
+            // textBoxY
             // 
-            this.textBox2.Location = new System.Drawing.Point(69, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.textBoxY.Location = new System.Drawing.Point(69, 35);
+            this.textBoxY.Name = "textBoxY";
+            this.textBoxY.Size = new System.Drawing.Size(100, 20);
+            this.textBoxY.TabIndex = 5;
             // 
             // label3
             // 
@@ -112,19 +113,30 @@ namespace Mandelbrot
             this.label4.TabIndex = 7;
             this.label4.Text = "Max:";
             // 
-            // textBox3
+            // textBoxSchaal
             // 
-            this.textBox3.Location = new System.Drawing.Point(232, 6);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
+            this.textBoxSchaal.Location = new System.Drawing.Point(232, 6);
+            this.textBoxSchaal.Name = "textBoxSchaal";
+            this.textBoxSchaal.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSchaal.TabIndex = 8;
             // 
-            // textBox4
+            // textBoxMax
             // 
-            this.textBox4.Location = new System.Drawing.Point(232, 35);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(48, 20);
-            this.textBox4.TabIndex = 9;
+            this.textBoxMax.Location = new System.Drawing.Point(232, 35);
+            this.textBoxMax.Name = "textBoxMax";
+            this.textBoxMax.Size = new System.Drawing.Size(48, 20);
+            this.textBoxMax.TabIndex = 9;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Basis"});
+            this.listBox1.Location = new System.Drawing.Point(342, 6);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(50, 56);
+            this.listBox1.TabIndex = 11;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -132,15 +144,16 @@ namespace Mandelbrot
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(404, 481);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.textBoxMax);
+            this.Controls.Add(this.textBoxSchaal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxY);
+            this.Controls.Add(this.textBoxX);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -153,15 +166,16 @@ namespace Mandelbrot
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxX;
+        private System.Windows.Forms.TextBox textBoxY;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxSchaal;
+        private System.Windows.Forms.TextBox textBoxMax;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

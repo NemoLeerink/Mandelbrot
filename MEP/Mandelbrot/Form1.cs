@@ -21,14 +21,14 @@ namespace Mandelbrot
         {
             InitializeComponent();
         }
-        
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         public void panel1_Paint(object sender, PaintEventArgs e)
         {
+            textBoxX.Text = middenX.ToString();
+            textBoxY.Text = middenY.ToString();
+            textBoxSchaal.Text = schaal.ToString();
+            textBoxMax.Text = herhalingen.ToString();
+
             Panel p = sender as Panel;
             Graphics g = e.Graphics;
 
@@ -39,16 +39,13 @@ namespace Mandelbrot
             double xWaarde;
             double yWaarde;
 
-            double defaultMiddenX = panel1.Width / 2; // 200
-            double defaultMiddenY = panel1.Height / 2; // 200
-
             for (int x = 0; x < panel1.Width; x++)
             {
                 for (int y = 0; y < panel1.Height; y++)
                 {
            
-                    xWaarde = (((double)x - defaultMiddenX) * schaal) + middenX;
-                    yWaarde = ((double)y - defaultMiddenY) * schaal + middenY;
+                    xWaarde = (((double)x - 200) * schaal) + middenX;
+                    yWaarde = ((((double)y * -1) + 200) * schaal) + middenY;
 
                     mandelGetal = Mandelbrot.Mandel(herhalingen, xWaarde, yWaarde);
                     
@@ -82,11 +79,6 @@ namespace Mandelbrot
             this.panel1.Refresh();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -98,6 +90,9 @@ namespace Mandelbrot
             {
                 try
                 {
+                    
+                    middenX += (e.X - 200) * schaal;
+                    middenY += ((e.Y * -1) + 200) * schaal;
                     schaal = schaal * 2;
 
                 }
@@ -110,6 +105,9 @@ namespace Mandelbrot
             {
                 try
                 {
+                   
+                    middenX += (e.X - 200) * schaal;
+                    middenY += ((e.Y * -1) + 200) * schaal;
                     schaal = schaal / 2;
 
                 }

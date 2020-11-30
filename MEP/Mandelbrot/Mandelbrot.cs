@@ -24,22 +24,17 @@ namespace Mandelbrot
             do
             {
                 mandelgetal += 1;
-                //Console.WriteLine("\nDe teller staat op: " + counter);
+               
                 (double, double) mangetallen = Formula(manx, many, mana, manb);
                 double newmana = mangetallen.Item1;
                 double newmanb = mangetallen.Item2;
-                //Console.WriteLine("Mandel x is: " + newmana);
-                //Console.WriteLine("Mandel y is: " + newmanb);
+                
                 pyt = Math.Sqrt(newmana * newmana + newmanb * newmanb);
-                //Console.Write("Afstand is: " + pyt);
+            
                 mana = newmana;
                 manb = newmanb;
 
             } while (pyt <= 2 & mandelgetal < herhalingen);
-
-            //Console.WriteLine("\nDone!");
-            //Console.WriteLine("Afstand is: " + pyt);
-            //Console.WriteLine("De teller is geïndigd op: " + counter);
 
             return mandelgetal;
         }

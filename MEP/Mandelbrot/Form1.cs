@@ -16,6 +16,9 @@ namespace Mandelbrot
         int herhalingen = 100;
         double middenX = 0;
         double middenY = 0;
+        int modeSelected;
+        bool basis = true;
+        bool experiment = false;
 
         public Form1()
         {
@@ -32,6 +35,7 @@ namespace Mandelbrot
             Panel p = sender as Panel;
             Graphics g = e.Graphics;
 
+            Color myRgbColor;
             Brush brushZwart = new SolidBrush(Color.Black);
             Brush brushWit = new SolidBrush(Color.White);
 
@@ -43,20 +47,29 @@ namespace Mandelbrot
             {
                 for (int y = 0; y < panel1.Height; y++)
                 {
-           
                     xWaarde = (((double)x - 200) * schaal) + middenX;
                     yWaarde = ((((double)y * -1) + 200) * schaal) + middenY;
 
                     mandelGetal = Mandelbrot.Mandel(herhalingen, xWaarde, yWaarde);
-                    
-                    // if mandelgetal even wordt het wit. Als oneven zwart. Oneindig ook zwart.
-                    if ((mandelGetal % 2 == 0) & mandelGetal != herhalingen)
+
+                    if (basis)
                     {
-                        g.FillRectangle(brushWit, x, y, 1, 1);
+                        // if mandelgetal even wordt het wit. Als oneven zwart. Oneindig ook zwart.
+                        if ((mandelGetal % 2 == 0) & mandelGetal != herhalingen)
+                        {
+                            g.FillRectangle(brushWit, x, y, 1, 1);
+                        }
+                        else
+                        {
+                            g.FillRectangle(brushZwart, x, y, 1, 1);
+                        }
                     }
-                    else
-                    {
-                        g.FillRectangle(brushZwart, x, y, 1, 1);
+
+                    if (experiment)
+                    { 
+                        myRgbColor = Color.FromArgb(mandelGetal*2, 255/mandelGetal, 10);
+                        Brush brushTest = new SolidBrush(myRgbColor);
+                        g.FillRectangle(brushTest, x, y, 1, 1);
                     }
                 }
             }
@@ -70,6 +83,18 @@ namespace Mandelbrot
                 middenY = double.Parse(textBoxY.Text);
                 herhalingen = int.Parse(textBoxMax.Text);
                 schaal = double.Parse(textBoxSchaal.Text);
+                modeSelected = listBox1.SelectedIndex;
+
+                if (modeSelected == 0)
+                {
+                    basis = true;
+                    experiment = false;
+                }
+                else if (modeSelected == 1) 
+                {
+                    basis = false;
+                    experiment = true;
+                }
             }
             catch (Exception ex) 
             {
@@ -81,7 +106,7 @@ namespace Mandelbrot
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void panel1_MouseClick(object sender, MouseEventArgs e)
@@ -116,7 +141,8 @@ namespace Mandelbrot
                     // Iets responsiefs voor de gebruiker toevoegen?
                 }
             }
-             this.panel1.Refresh();
+            // initialize deed het niet. Weet nog niet waarom niet 
+            this.panel1.Refresh();
         }
     }
 }

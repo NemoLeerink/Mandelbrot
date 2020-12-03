@@ -132,12 +132,13 @@ namespace Mandelbrot
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Items.AddRange(new object[] {
             "Basis",
-            "Experiment"});
+            "Toxic",
+            "Spikkels",
+            "Spiraal"});
             this.listBox1.Location = new System.Drawing.Point(342, 6);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(50, 56);
             this.listBox1.TabIndex = 11;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Form1
             // 

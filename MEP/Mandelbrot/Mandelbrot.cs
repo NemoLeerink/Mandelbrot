@@ -1,4 +1,10 @@
-﻿using System;
+﻿/**
+ * @author Michiel Borghuis & Nemo Leerink.
+ * Groep 2. 
+ * Dit programma laat een mandelbrot figuur zien en heeft een aantal interactieve componenten. 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,6 +18,8 @@ namespace Mandelbrot
         {
             Application.Run(new Form1());
         }
+        
+        // Deze methode berekend het mandelgetal
         public static int Mandel(int herhalingen, double x, double y)
         {
             double pyt = 0;
@@ -29,6 +37,7 @@ namespace Mandelbrot
                 double newmana = mangetallen.Item1;
                 double newmanb = mangetallen.Item2;
                 
+                // Berekend de afstand tot het 0-punt
                 pyt = Math.Sqrt(newmana * newmana + newmanb * newmanb);
             
                 mana = newmana;
@@ -38,6 +47,7 @@ namespace Mandelbrot
 
             return mandelgetal;
         }
+        // Berekend het nieuwe punt
         static (double, double) Formula(double x, double y, double a, double b)
         {
             double manx = a * a - b * b + x;

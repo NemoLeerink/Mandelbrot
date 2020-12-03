@@ -46,3 +46,13 @@ C:\Users\Gebruiker\Desktop\Mandelbrot-WerkcollegeNemo\Mandelbrot-WerkcollegeNemo
 C:\Users\Gebruiker\Desktop\Mandelbrot-WerkcollegeNemo\Mandelbrot-WerkcollegeNemo\MEP\Mandelbrot\obj\Debug\Mandelbrot.csproj.CoreCompileInputs.cache
 C:\Users\Gebruiker\Desktop\Mandelbrot-WerkcollegeNemo\Mandelbrot-WerkcollegeNemo\MEP\Mandelbrot\obj\Debug\Mandelbrot.exe
 C:\Users\Gebruiker\Desktop\Mandelbrot-WerkcollegeNemo\Mandelbrot-WerkcollegeNemo\MEP\Mandelbrot\obj\Debug\Mandelbrot.pdb
+C:\Users\Gebruiker\Desktop\Mandelbrot-main\Mandelbrot-main\MEP\Mandelbrot\bin\Debug\Mandelbrot.exe.config
+C:\Users\Gebruiker\Desktop\Mandelbrot-main\Mandelbrot-main\MEP\Mandelbrot\bin\Debug\Mandelbrot.exe
+C:\Users\Gebruiker\Desktop\Mandelbrot-main\Mandelbrot-main\MEP\Mandelbrot\bin\Debug\Mandelbrot.pdb
+C:\Users\Gebruiker\Desktop\Mandelbrot-main\Mandelbrot-main\MEP\Mandelbrot\obj\Debug\Mandelbrot.csprojAssemblyReference.cache
+C:\Users\Gebruiker\Desktop\Mandelbrot-main\Mandelbrot-main\MEP\Mandelbrot\obj\Debug\Mandelbrot.Form1.resources
+C:\Users\Gebruiker\Desktop\Mandelbrot-main\Mandelbrot-main\MEP\Mandelbrot\obj\Debug\Mandelbrot.Properties.Resources.resources
+C:\Users\Gebruiker\Desktop\Mandelbrot-main\Mandelbrot-main\MEP\Mandelbrot\obj\Debug\Mandelbrot.csproj.GenerateResource.cache
+C:\Users\Gebruiker\Desktop\Mandelbrot-main\Mandelbrot-main\MEP\Mandelbrot\obj\Debug\Mandelbrot.csproj.CoreCompileInputs.cache
+C:\Users\Gebruiker\Desktop\Mandelbrot-main\Mandelbrot-main\MEP\Mandelbrot\obj\Debug\Mandelbrot.exe
+C:\Users\Gebruiker\Desktop\Mandelbrot-main\Mandelbrot-main\MEP\Mandelbrot\obj\Debug\Mandelbrot.pdb
